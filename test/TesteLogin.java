@@ -51,7 +51,7 @@ public class TesteLogin {
       user.sendKeys("test");
       WebElement pass = driver.findElement(By.name("psw"));
       pass.sendKeys("test");
-      WebElement bt = driver.findElement(By.id("/html/body/div[1]/div[3]/div/button"));
+      WebElement bt = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/button"));
       bt.click();
       WebElement x = driver.findElement(By.xpath("/html/body/div[1]/div[2]/button"));
       assertEquals(x.getText(),"Logout");
