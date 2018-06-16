@@ -42,7 +42,7 @@ public class TestePagina1 {
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
-    //
+    // // Testes à Página 1 da ficha técnica
     @Test
     public void testepag1() {
       WebDriver driver  = new ChromeDriver();

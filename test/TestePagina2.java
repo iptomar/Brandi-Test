@@ -43,9 +43,9 @@ public class TestePagina2 {
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
-    //
+    // Testes à Página 2 da ficha técnica
        @Test
-    public void testepag1() {
+    public void testepag2() {
       WebDriver driver  = new ChromeDriver();
       driver.get("http://localhost:8080/#/form#pg1");     
       WebElement tipoConjunto = driver.findElement(By.xpath("//*[@id=\"tipo-conjunto\"]"));
@@ -64,43 +64,30 @@ public class TestePagina2 {
       inscricoesConstrucao.sendKeys("Traços de serra, compasso, riscador; Marcas geométricas;");
       WebElement classificacaoPatrimonial = driver.findElement(By.xpath("//*[@id=\"data-de-entrada-do-cearc\"]"));
       classificacaoPatrimonial.sendKeys("Não tem");
-
       WebElement estilo = driver.findElement(By.xpath("//*[@id=\"estilo\"]"));
-      estilo.sendKeys("Tardo-maneirista / Proto-Barroco");
-      
+      estilo.sendKeys("Tardo-maneirista / Proto-Barroco");     
       Select epoca = new Select(driver.findElement(By.id("epoca")));
-      epoca.selectByIndex(2); 
-      
+      epoca.selectByIndex(2);      
       Select qualidade = new Select(driver.findElement(By.id("qualidade")));
-      qualidade.selectByIndex(4); 
-      
+      qualidade.selectByIndex(4);      
       WebElement descricao = driver.findElement(By.xpath("//*[@id=\"descrio\"]"));
-      descricao.sendKeys("Entablamento, com frisos, de decorações vegetalistas e geométricas, com apliques de contas de vidro azul e vermelho;");
-      
+      descricao.sendKeys("Entablamento, com frisos, de decorações vegetalistas e geométricas, com apliques de contas de vidro azul e vermelho;");     
       WebElement analogia = driver.findElement(By.xpath("//*[@id=\"analogia\"]"));
-      analogia.sendKeys("Desconhecidas");
-      
+      analogia.sendKeys("Desconhecidas");     
       WebElement conclusoes = driver.findElement(By.xpath("//*[@id=\"concluses\"]"));
-      conclusoes.sendKeys("n/a");
-      
+      conclusoes.sendKeys("n/a");     
       WebElement autoria = driver.findElement(By.xpath("//*[@id=\"autoria\"]"));
-      autoria.sendKeys("Desconhecida");
-      
+      autoria.sendKeys("Desconhecida");    
       WebElement datacao = driver.findElement(By.xpath("//*[@id=\"datao\"]"));
-      datacao.sendKeys("Fins do séc. XVII, Inícios séc. XVIII (?)");
-      
+      datacao.sendKeys("Fins do séc. XVII, Inícios séc. XVIII (?)");    
       WebElement localOrigem = driver.findElement(By.xpath("//*[@id=\"local-origem\"]"));
-      localOrigem.sendKeys("Provavelmente Lisboa");
-      
+      localOrigem.sendKeys("Provavelmente Lisboa");      
       WebElement estruturaTecnica = driver.findElement(By.xpath("//*[@id=\"estrutura-tcnica\"]"));
-      estruturaTecnica.sendKeys("Ensamblagem; Entalhamento; Ligações simples, coladas, cavilhadas e pregadas.");
-      
+      estruturaTecnica.sendKeys("Ensamblagem; Entalhamento; Ligações simples, coladas, cavilhadas e pregadas.");     
       WebElement superficieTecnica = driver.findElement(By.xpath("//*[@id=\"superficie-tcnica\"]"));
-      superficieTecnica.sendKeys("Douramento a água, brunido");
-      
+      superficieTecnica.sendKeys("Douramento a água, brunido");     
       WebElement estruturaMaterial = driver.findElement(By.xpath("//*[@id=\"estrutura-material\"]"));
-      estruturaMaterial.sendKeys("Madeira de carvalho. Intervenções diferenciadas em madeiras de pinho e castanho");
-      
+      estruturaMaterial.sendKeys("Madeira de carvalho. Intervenções diferenciadas em madeiras de pinho e castanho");      
       WebElement superficieMaterial = driver.findElement(By.xpath("//*[@id=\"superficie-material\"]"));
       superficieMaterial.sendKeys("Cré, cola de coelho, bollus, folha de ouro de lei, vidro, cápsulas de chumbo");
            
