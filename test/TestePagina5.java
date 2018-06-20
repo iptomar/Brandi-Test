@@ -57,20 +57,20 @@ public class TestePagina5 {
       
       
       WebElement DBMestrutura = driver.findElement(By.id("deteriorao-biolgica-dos-materiais"));
-      DFQMMestrutura.sendKeys("TESTE");  
+      DBMestrutura.sendKeys("TESTE");  
       
       WebElement DBMsuperficie = driver.findElement(By.id("superficiebiologica"));
-      DFQMMsuperficie.sendKeys("TESTE");
+      DBMsuperficie.sendKeys("TESTE");
       
       WebElement DBMelementos = driver.findElement(By.id("elementosbiologica"));
-      DFQMMelementos.sendKeys("TESTE");
+      DBMelementos.sendKeys("TESTE");
       
-      WebElement P5Conclusoes = driver.findElement(By.id("observaes--concluses"));
+      WebElement P5Conclusoes = driver.findElement(By.xpath("//*[@id=\"observaes--concluses\"]"));
       P5Conclusoes.sendKeys("TESTE");
       
       
            
-      driver.quit();  
+      //driver.quit();  
       
     }
 }
