@@ -44,7 +44,7 @@ public class TesteAdicionarPropostaSimples {
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void testeAdicionarProposta() {
+     public void testeAdicionarPropostaSimples() {
       WebDriver driver  = new ChromeDriver();
       driver.get("http://localhost:8080/#/AdicionarProposta");
       WebElement x = driver.findElement(By.xpath("/html/body/div[1]/div[3]/h1"));
