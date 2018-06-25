@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,9 +13,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
  *
  * @author Rafael
  */
-public class TesteAdicionarPropostaSimples {
+public class LoginAux {
+    public WebDriver driver  = new ChromeDriver();
     
-    public TesteAdicionarPropostaSimples() {
+    public LoginAux() {
     }
     
     @BeforeClass
@@ -39,22 +34,27 @@ public class TesteAdicionarPropostaSimples {
     @After
     public void tearDown() {
     }
-
+    
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void testeAdicionarPropostaSimples() {
+     public void login(String url) {
          
-      LoginAux aux = new LoginAux();
-      aux.login("http://localhost:8080/#/AdicionarProposta");
+      driver.get("http://localhost:8080/#/Login");
       
+      WebElement user = driver.findElement(By.name("uname"));
+      user.sendKeys("test");
       
-      aux.driver.get("http://localhost:8080/#/AdicionarProposta");
+      WebElement pass = driver.findElement(By.name("psw"));
+      pass.sendKeys("test");
       
-      WebElement x = aux.driver.findElement(By.xpath("/html/body/div[1]/main/div[1]/h1"));
-      assertEquals(x.getText(),"Adicionar Proposta");
+      WebElement bt = driver.findElement(By.xpath("/html/body/div[1]/main/div[1]/div/button"));
+      bt.click();
       
-      aux.driver.quit();
+      WebElement confirmation = driver.findElement(By.xpath("/html/body/div[1]/main/div[1]/h1"));
+      assertEquals(confirmation.getText(),"true");
+      
+      driver.get(url);
      }
 }

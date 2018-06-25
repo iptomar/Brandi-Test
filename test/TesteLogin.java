@@ -47,14 +47,19 @@ public class TesteLogin {
      public void login() {
       WebDriver driver  = new ChromeDriver();
       driver.get("http://localhost:8080/#/Login");
+      
       WebElement user = driver.findElement(By.name("uname"));
       user.sendKeys("test");
+      
       WebElement pass = driver.findElement(By.name("psw"));
       pass.sendKeys("test");
-      WebElement bt = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/button"));
+      
+      WebElement bt = driver.findElement(By.xpath("/html/body/div[1]/main/div[1]/div/button"));
       bt.click();
-      WebElement x = driver.findElement(By.xpath("/html/body/div[1]/div[2]/button"));
-      assertEquals(x.getText(),"Logout");
+      
+      WebElement confirmation = driver.findElement(By.xpath("/html/body/div[1]/main/div[1]/h1"));
+      assertEquals(confirmation.getText(),"true");
+      
       driver.quit();
      }
 }

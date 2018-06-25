@@ -46,25 +46,33 @@ public class TesteAdicionarPropostaCompleto {
     //
      @Test
      public void TesteAdicionarPropostaCompleto() {
-      WebDriver driver  = new ChromeDriver();
-      driver.get("http://localhost:8080/#/AdicionarProposta");
-      Select aceitacaoProposta = new Select (driver.findElement(By.xpath("//*[@id=\"aceitao-proposta\"]")));
+      LoginAux aux = new LoginAux();
+      aux.login("http://localhost:8080/#/AdicionarProposta");
+      
+      Select aceitacaoProposta = new Select (aux.driver.findElement(By.xpath("//*[@id=\"aceitaorejeio-proposta\"]")));
       aceitacaoProposta.selectByValue("Recusada");
-      WebElement justificacao = driver.findElement(By.xpath("//*[@id=\"app\"]"));
+      
+      WebElement justificacao = aux.driver.findElement(By.xpath("//*[@id=\"justificao-se-recusada\"]"));
       justificacao.sendKeys("Orçamento elevado");
-      WebElement desc = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div/fieldset/div[3]/label"));
+      
+      WebElement desc = aux.driver.findElement(By.xpath("//*[@id=\"descrio-da-proposta\"]"));
       desc.sendKeys("Orçamento elevado, considerando o restauro que é estipulado");
-      WebElement dataElaboracao = driver.findElement(By.xpath("//*[@id=\"data-de-elaborao\"]"));
+      
+      WebElement dataElaboracao = aux.driver.findElement(By.xpath("//*[@id=\"data-de-elaborao-da-proposta\"]"));
       dataElaboracao.sendKeys("07062018");
-      WebElement dataEnvio = driver.findElement(By.xpath("//*[@id=\"data-de-envio\"]"));
+      
+      WebElement dataEnvio = aux.driver.findElement(By.xpath("//*[@id=\"data-de-envio-da-proposta\"]"));
       dataEnvio.sendKeys("08062018");
-      WebElement idPedido = driver.findElement(By.xpath("//*[@id=\"id-do-pedido\"]"));
+      
+      WebElement idPedido = aux.driver.findElement(By.xpath("//*[@id=\"id-do-pedido\"]"));
       idPedido.sendKeys("8");
-      WebElement idCoordenador = driver.findElement(By.xpath("//*[@id=\"id-coordenador\"]"));
+      
+      WebElement idCoordenador = aux.driver.findElement(By.xpath("//*[@id=\"id-do-coordenador\"]"));
       idCoordenador.sendKeys("10");
-      WebElement bt = driver.findElement(By.xpath("/html/body/div[1]/div[3]/button"));
+      
+      WebElement bt = aux.driver.findElement(By.xpath("/html/body/div[1]/main/div[1]/button"));
       bt.click();   
       
-      driver.quit();
+      aux.driver.quit();
      }
 }

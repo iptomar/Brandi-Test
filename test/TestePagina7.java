@@ -46,16 +46,20 @@ public class TestePagina7 {
       WebDriver driver  = new ChromeDriver();
       driver.get("http://localhost:8080/#/form#pg7");
       
+      // Erro, existem elementos com o mesmo id
       WebElement tipoDeIntervencao = driver.findElement(By.xpath("/html/body/div[1]/main/div[1]/div[11]/div[1]/div/div[2]/div/fieldset/div/div/div/label[1]"));
       assertEquals(tipoDeIntervencao.getText(),"Preservação");
       tipoDeIntervencao.click();   
 
-      WebElement estrutura = driver.findElement(By.xpath("//*[@id=\"estrutura\"]"));
+      // Erro, escreve na seção Estrutura da página 6
+      WebElement estrutura = driver.findElement(By.id("estrutura"));
       estrutura.sendKeys("Banco da cadeira");
 
+      // Erro, escreve na seção Superfície da página 6
       WebElement superficie = driver.findElement(By.xpath("//*[@id=\"superfcie\"]"));
       superficie.sendKeys("Madeira");
       
+      // Erro, escreve seção Elementos Acessórios da página 2
       WebElement elementosAss = driver.findElement(By.xpath("//*[@id=\"elementos-acessrios\"]"));
       elementosAss.sendKeys("Pregos");
       
@@ -79,5 +83,7 @@ public class TestePagina7 {
       
       WebElement interlocutores = driver.findElement(By.xpath("//*[@id=\"interlocutores-do-processo\"]"));
       interlocutores.sendKeys("João Pereira");  
+      
+      //driver.quit();
     }  
 }
