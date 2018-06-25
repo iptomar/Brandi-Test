@@ -42,22 +42,38 @@ public class EditarEvento {
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
-    //
+    // Teste feito à ediçao de eventos
     @Test
     public void TesteEditarEvento(){
-      LoginAuxiliar auxiliar = new LoginAuxiliar();
-      auxiliar.login("http://localhost:8080/?#/EditarEvento");       
+      WebDriver driver  = new ChromeDriver();
+      driver.get("http://localhost:8080/#/EditarEvento");     
 
-      WebElement descricaoEvento = auxiliar.driver.findElement(By.xpath("//*[@id=\"descrio\"]"));
+      WebElement entrar = driver.findElement(By.xpath("//*[@id=\"app\"]/div[2]/div/nav/ul/a"));
+      entrar.click();
+      
+      WebElement utilizador = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div[1]/div[1]/div/input[1]"));
+      utilizador.sendKeys("test");
+      
+      WebElement chave = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div[1]/div[1]/div/input[2]"));
+      chave.sendKeys("test");
+      
+      WebElement iniciarSessao = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div[1]/div[1]/div/button"));
+      iniciarSessao.click();     
+      
+      driver.get("http://localhost:8080/#/EditarEvento");
+           
+      WebElement descricaoEvento = driver.findElement(By.xpath("//*[@id=\"descrio\"]"));
       descricaoEvento.sendKeys("O Documento Y tem informação em relação à peça A");     
       
-      WebElement dataDoEvento = auxiliar.driver.findElement(By.xpath("//*[@id=\"data\"]"));
+      WebElement dataDoEvento = driver.findElement(By.xpath("//*[@id=\"data\"]"));
       dataDoEvento.sendKeys("07072018");
 
-      WebElement tipoEvento = auxiliar.driver.findElement(By.xpath("//*[@id=\"tipo\"]"));
+      WebElement tipoEvento = driver.findElement(By.xpath("//*[@id=\"tipo\"]"));
       tipoEvento.sendKeys("evento privado");
       
-      WebElement confirmar = auxiliar.driver.findElement(By.xpath("//*[@id=\"app\"]/main/div[1]/button"));
-      confirmar.click();   
+      WebElement confirmar = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div[1]/button"));
+      confirmar.click();
+      
+      driver.quit();
 }
 }
