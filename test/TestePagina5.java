@@ -42,7 +42,7 @@ public class TestePagina5 {
     }
 
     @Test
-    public void testepag2() {
+    public void testepag5() {
       WebDriver driver  = new ChromeDriver();
       driver.get("http://localhost:8080/#/form#pg1");  
       
@@ -70,7 +70,7 @@ public class TestePagina5 {
       
       
            
-      //driver.quit();  
+      driver.quit();  
       
     }
 }
