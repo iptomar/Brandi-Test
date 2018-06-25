@@ -19,9 +19,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
  *
  * @author joaon
  */
-public class TesteEditarPedido {
+public class TesteAdicionarPedido {
     
-    public TesteEditarPedido() {
+    public TesteAdicionarPedido() {
     }
     
     @BeforeClass
@@ -42,12 +42,12 @@ public class TesteEditarPedido {
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
-    // // Teste feito à edição de pedidos
+    // Teste feito à adição de pedidos
     @Test
-    public void TesteEditarPedido(){
+    public void TesteAdicionarPedido(){
       
       WebDriver driver  = new ChromeDriver();
-      driver.get("http://localhost:8080/#/EditarPedido");     
+      driver.get("http://localhost:8080/#/AdicionarPedido");     
 
       WebElement entrar = driver.findElement(By.xpath("//*[@id=\"app\"]/div[2]/div/nav/ul/a"));
       entrar.click();
@@ -61,15 +61,15 @@ public class TesteEditarPedido {
       WebElement iniciarSessao = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div[1]/div[1]/div/button"));
       iniciarSessao.click();     
       
-      driver.get("http://localhost:8080/#/EditarPedido");
+      driver.get("http://localhost:8080/#/AdicionarPedido");
            
-      WebElement tituloPedido = driver.findElement(By.xpath("//*[@id=\"titulo\"]"));
-      tituloPedido.sendKeys("Reparação de uma cadeira de madeira");     
+      WebElement tituloPedido = driver.findElement(By.xpath("//*[@id=\"titulo-do-pedido\"]"));
+      tituloPedido.sendKeys("Restauro da Mesa do Século X");     
       
-      WebElement descricaoPedido = driver.findElement(By.xpath("//*[@id=\"descricao\"]"));
-      descricaoPedido.sendKeys("A cadeira tem os pés partidos e têm que ser arranjados a colados");
+      WebElement descricaoPedido = driver.findElement(By.xpath("//*[@id=\"descrio-do-pedido\"]"));
+      descricaoPedido.sendKeys("Neste resaturo pretende-se dar uma pintura à mesa e um ajuste nos pés da mesa");
       
-      WebElement guardarPedido = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div[1]/div[2]/button"));
+      WebElement guardarPedido = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div[1]/button"));
       guardarPedido.click();
       
       driver.quit();
