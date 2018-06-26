@@ -46,14 +46,47 @@ public class TesteAdicionarObjecto {
       WebElement designaObjeto = aux.driver.findElement(By.xpath("//*[@id=\"designao-do-objeto\"]"));
       designaObjeto.sendKeys("Cadeira de madeira do século XIX");
       
+      WebElement lcrm = aux.driver.findElement(By.xpath("//*[@id=\"processo-lcrm\"]"));
+      lcrm.sendKeys("123123"); 
+      
+      WebElement cearc = aux.driver.findElement(By.xpath("//*[@id=\"processo-cearc\"]"));
+      cearc.sendKeys("213412"); 
+      
+      WebElement coordenador = aux.driver.findElement(By.xpath("//*[@id=\"coordenao\"]"));
+      coordenador.sendKeys("Ricardo Lopes"); 
+      
+      WebElement dataAbertProce = aux.driver.findElement(By.xpath("//*[@id=\"data-de-abertura-do-processo\"]"));
+      dataAbertProce.sendKeys("23062018"); 
+      
+      WebElement dataEntrLcrm = aux.driver.findElement(By.xpath("//*[@id=\"data-de-entrada-lcrm\"]"));
+      dataEntrLcrm.sendKeys("29062018"); 
+      
+      WebElement dataEntrCearc = aux.driver.findElement(By.xpath("//*[@id=\"data-de-entrada-cearc\"]"));
+      dataEntrCearc.sendKeys("30072018"); 
+      
+      WebElement idSubCateg = aux.driver.findElement(By.xpath("//*[@id=\"id-da-sub-categoria\"]"));
+      idSubCateg.sendKeys("7"); 
+      
       WebElement tipologia = aux.driver.findElement(By.xpath("//*[@id=\"tipologia\"]"));
       tipologia.sendKeys("Cadeira");  
       
       WebElement localizao = aux.driver.findElement(By.xpath("//*[@id=\"localizao\"]"));
-      localizao.sendKeys("Torres Novas");          
-
-      WebElement bt = aux.driver.findElement(By.xpath("/html/body/div[1]/main/div[1]/button"));
-      bt.click();   
+      localizao.sendKeys("Torres Novas");     
+      
+      WebElement dimensao = aux.driver.findElement(By.xpath("//*[@id=\"dimenso\"]"));
+      dimensao.sendKeys("1.5x2x4");  
+      
+      WebElement idDono = aux.driver.findElement(By.xpath("//*[@id=\"id-do-dono-da-obra\"]"));
+      idDono.sendKeys("4");  
+      
+      WebElement idProprietario = aux.driver.findElement(By.xpath("//*[@id=\"id-do-proprietrio\"]"));
+      idProprietario.sendKeys("3");
+      
+      WebElement idMecenas = aux.driver.findElement(By.xpath("//*[@id=\"id-do-mecenas\"]"));
+      idMecenas.sendKeys("5"); 
+      
+      WebElement idProduto = aux.driver.findElement(By.xpath("//*[@id=\"id-do-pedido\"]"));
+      idProduto.sendKeys("1"); 
       
       aux.driver.quit();
     }  

@@ -44,10 +44,10 @@ public class TesteEliminarProposta {
       LoginAux aux = new LoginAux();
       aux.login("http://localhost:8080/#/eliminarproposta");
       
-      WebElement h1 = aux.driver.findElement(By.xpath("/html/body/div[1]/main/div[1]/h1"));
-      assertEquals(h1.getText(),"Quer Mesmo Apagar a Proposta?");
+      WebElement h1 = aux.driver.findElement(By.xpath("/html/body/div[1]/main/div[1]/table/tr[1]/th/h1"));
+      assertEquals(h1.getText(),"Quer mesmo arquivar a Proposta?");
       
-      WebElement bt = aux.driver.findElement(By.xpath("/html/body/div[1]/main/div[1]/button[1]"));
+      WebElement bt = aux.driver.findElement(By.xpath("/html/body/div[1]/main/div[1]/table/tr[2]/td/button[1]"));
       bt.click();   
       
       aux.driver.quit();

@@ -49,11 +49,8 @@ public class LoginAux {
       WebElement pass = driver.findElement(By.name("psw"));
       pass.sendKeys("test");
       
-      WebElement bt = driver.findElement(By.xpath("/html/body/div[1]/main/div[1]/div/button"));
+      WebElement bt = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div[1]/div[1]/div/button"));
       bt.click();
-      
-      WebElement confirmation = driver.findElement(By.xpath("/html/body/div[1]/main/div[1]/h1"));
-      assertEquals(confirmation.getText(),"true");
       
       driver.get(url);
      }

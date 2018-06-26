@@ -49,9 +49,8 @@ public class TestePagina4 {
       WebDriver driver  = new ChromeDriver();
       driver.get("http://localhost:8080/#/form#pg4");
       
-      WebElement objectivoGeral1 = driver.findElement(By.xpath("/html/body/div[1]/main/div[1]/div[8]/div/div[2]/div[1]/fieldset/div/div/div/div/div[1]/label"));
-      assertEquals(objectivoGeral1.getText(),"Identificação de materiais, técnicas e tecnologias de produção");
-      objectivoGeral1.click();  
+      WebElement objectivoGera1 = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div[1]/div[8]/div/div[2]/div[1]/fieldset/div/div/div/div/div[1]/label"));
+      objectivoGera1.click();  
       
       /* Erro, "data - element not visible"
       WebElement dataClk = driver.findElement(By.xpath("//*[@id=\"app\"]/main/div[1]/div[8]/div/div[2]/div[2]/div[1]/div[2]/div/table/tbody/tr[1]/td[1]/div")); 
